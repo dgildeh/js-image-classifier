@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <title>Webcam Poser Classifier</title>
+
+    <!-- Bootstrap meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Load the latest version of TensorFlow.js -->
+    <script src="https://unpkg.com/@tensorflow/tfjs"></script>
+    <script src="https://unpkg.com/@tensorflow-models/mobilenet"></script>
+    <script src="https://unpkg.com/@tensorflow-models/knn-classifier"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h1>Webcam Poser Classifier</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <!-- Add an webcam that we will use to test -->
+                <video autoplay playsinline muted id="webcam" width="100%" height="100%"></video>
+            </div>
+            <div class="col bg-info text-light">
+                <div id="console"></div>
+            </div>
+        </div>
+        <div class="row p-3">
+            <div class="col text-center">
+                <button id="class-a" class="btn btn-primary">Pose A</button>
+                <button id="class-b" class="btn btn-primary">Pose B</button>
+                <button id="class-c" class="btn btn-primary">Pose C</button>
+            </div>
+        </div>
+        <div class="row p-3">
+            <div class="col text-center">
+                <p><strong>Instructions:</strong> Make a pose and hold it while pressing the 'Pose A' button a few times until the prediction for A is 1. Make a second
+                pose and hold it while pressing the 'Pose B' button a few times until the prediction for B is 1. Make a third pose and hold it while pressing the 'Pose C'
+                button a few times until the prediction for C is 1.</p>
+
+                <p>Suggested poses: Peace sign, Thumbs up, Jazz Hands</p>
+
+                </p>Once the model is trained you can then switch between poses and the model should show you your pose predicition in the top right correctly.</p>
+
+                <p>This simple application is built using Tensorflow.js and follows the tutorial on their site here:
+                    <a href="https://codelabs.developers.google.com/codelabs/tensorflowjs-teachablemachine-codelab/index.html" target="_blank">https://codelabs.developers.google.com/codelabs/tensorflowjs-teachablemachine-codelab/index.html</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and libraries -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <!-- Load index.js after the content of the page -->
+    <script src="index.js"></script>
+</body>
+</html>
